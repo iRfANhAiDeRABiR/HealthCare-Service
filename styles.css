@@ -1139,6 +1139,75 @@ body {
   height: 8px;
   border-radius: 4px;
 }
+.diagnostic-sidebar {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 320px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 999;
+  border-right: 1px solid #eee;
+}
+
+
+.diagnostic-sidebar-container {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 320px;
+  max-height: calc(100vh - 120px);
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.diagnostic-sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  background: #f9fafb;
+}
+
+.diagnostic-sidebar-header h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.diagnostic-sidebar-header input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.diagnostic-list-scroll {
+  overflow-y: auto;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.hospital-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.hospital-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.hospital-item p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
 
 #distanceValue {
   font-weight: 600;
