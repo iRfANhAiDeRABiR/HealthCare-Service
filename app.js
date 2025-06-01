@@ -120,7 +120,7 @@ function initApp() {
             ${renderNavItem("bloodBanks", "droplet", "Blood Banks")}
             ${renderNavItem("pharmacies", "pill", "Pharmacies")}
             ${renderNavItem("ambulance", "ambulance", "Ambulance")}
-            ${renderNavItem("emergency", "heart-pulse", "Emergency")}
+            
             ${renderNavItem("telemedicine", "video", "Telemedicine")}
             ${renderNavItem("drugInteractions", "alert-circle", "Drug Interactions")}
             ${renderNavItem("appointments", "calendar", "Appointments")}
@@ -241,11 +241,27 @@ function initApp() {
 
     // Add event listeners to nav items
     document.querySelectorAll(".nav-item").forEach((item) => {
-      item.addEventListener("click", function () {
-        activeTab = this.getAttribute("data-tab")
-        renderApp()
-      })
-    })
+  item.addEventListener("click", function () {
+    const tab = this.getAttribute("data-tab")
+
+    if (tab === "appointments") {
+      window.location.href = "appointments.php"
+      return
+    }
+     if (tab === "pharmacies") {
+      window.location.href = "pharmacy.php";
+      return;
+     }
+     if (tab === "ambulance") {
+      window.location.href = "ambulance.php";
+      return;
+     }
+
+    activeTab = tab
+    renderApp()
+  })
+})
+
 
     // Add event listeners to buttons
     document.querySelectorAll("[data-action]").forEach((element) => {
@@ -1504,21 +1520,6 @@ function initApp() {
         diagnosticListContainer.className = "floating-top-left diagnostic-list-container"
         diagnosticListContainer.innerHTML = `
   <h2 class="section-title">Nearby Diagnostic Centers</h2>
-  
-  <div class="filter-container">
-    <label for="distanceFilter" class="filter-label">
-      <span>Filter by distance: <span id="distanceValue">5.0</span> km</span>
-    </label>
-    <input 
-      type="range" 
-      id="distanceFilter" 
-      class="distance-slider" 
-      min="0.5" 
-      max="5.0" 
-      step="0.5" 
-      value="5.0"
-    >
-  </div>
   
   <div id="diagnosticCentersList" class="hospital-list">
     ${window.diagnosticCenterMarkers
