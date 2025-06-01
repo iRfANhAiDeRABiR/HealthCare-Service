@@ -17,14 +17,73 @@
 <body>
 <div id="app">
   <!-- App will be rendered here -->
-  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div class="main-content">
+  //<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
     <p>Loading HealthCare Service...</p>
+  </div><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthCare Service</title>
+
+  <!-- Favicon to prevent 404 error -->
+  <link rel="icon" href="data:," />
+
+  <!-- Leaflet CSS (if used in your app) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="app-title">HealthCare Service</h1>
+      <nav class="nav">
+        <button class="nav-item" data-tab="home">Home</button>
+        <button class="nav-item" data-tab="appointments">Appointments</button>
+        <button class="nav-item" data-tab="pharmacies">
+          <i class="fas fa-pills"></i> Pharmacy
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main App Container -->
+  <div id="app">
+    <div class="main-content">
+      <!-- Dynamic content (appointments, pharmacy, etc.) will load here -->
+      <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
+        <p>Loading HealthCare Service...</p>
+      </div>
+    </div>
   </div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+  <!-- Pharmacy integration script -->
+  <script src="pharmacy-integration.js"></script>
+
+  <!-- Main App script -->
+  <script src="app.js"></script>
+</body>
+</html>
+
 </div>
 
 <!-- Load libraries -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="pharmacy-integration.js"></script>
+
 
 <!-- Load our app -->
 <script src="app.js"></script>
