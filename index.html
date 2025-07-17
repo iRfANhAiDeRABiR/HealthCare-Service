@@ -1,92 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HealthCare Service</title>
-
-<!-- Favicon to prevent 404 error -->
-<link rel="icon" href="data:,">
-
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-<!-- Custom CSS -->
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Solutions BD</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons (for simplicity, using a CDN for this example) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-<div id="app">
-  <!-- App will be rendered here -->
-  <div class="main-content">
-  //<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <p>Loading HealthCare Service...</p>
-  </div><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HealthCare Service</title>
+  <div class="min-h-screen bg-gray-50">
+      <!-- Header -->
+      <header class="header">
+          <div class="container">
+              <div class="header-top-bar">
+                  <!-- Logo -->
+                  <div class="logo-container">
+                      <div class="logo-gradient">Tech Solutions</div>
+                      <span class="logo-bd">BD</span>
+                  </div>
 
-  <!-- Favicon to prevent 404 error -->
-  <link rel="icon" href="data:," />
+                  <!-- Search Bar -->
+                  <div class="search-bar-desktop">
+                      <div class="search-input-group">
+                          <select class="search-select">
+                              <option value="all">All</option>
+                              <option value="windows">Windows</option>
+                              <option value="office">Office</option>
+                              <option value="antivirus">Antivirus</option>
+                          </select>
+                          <input type="text" placeholder="Search for software, licenses, tools..." class="search-input">
+                          <button class="search-button">
+                              <i data-lucide="search" class="icon-sm"></i>
+                          </button>
+                      </div>
+                  </div>
 
-  <!-- Leaflet CSS (if used in your app) -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+                  <!-- User Actions -->
+                  <div class="user-actions">
+                      <div class="cart-info">
+                          <span id="cart-display">0 item(s) - $0.00</span>
+                          <button class="cart-button">
+                              <i data-lucide="shopping-cart" class="icon-sm"></i>
+                          </button>
+                      </div>
 
-  <!-- FontAwesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+                      <!-- Mobile Menu Toggle -->
+                      <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                          <i data-lucide="menu" class="icon-sm"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </header>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <header class="header">
-    <div class="container header-content">
-      <h1 class="app-title">HealthCare Service</h1>
-      <nav class="nav">
-        <button class="nav-item" data-tab="home">Home</button>
-        <button class="nav-item" data-tab="appointments">Appointments</button>
-        <button class="nav-item" data-tab="pharmacies">
-          <i class="fas fa-pills"></i> Pharmacy
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main App Container -->
-  <div id="app">
-    <div class="main-content">
-      <!-- Dynamic content (appointments, pharmacy, etc.) will load here -->
-      <div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
-        <p>Loading HealthCare Service...</p>
+      <!-- Mobile Menu Sheet (simplified) -->
+      <div class="mobile-menu-sheet" id="mobile-menu-sheet">
+          <div class="mobile-menu-content">
+              <input type="text" placeholder="Search..." class="mobile-search-input">
+              <!-- Add mobile navigation links here if needed -->
+              <button class="mobile-menu-close" id="mobile-menu-close">Close</button>
+          </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Libraries -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+      <!-- Navigation -->
+      <nav class="navigation-bar">
+          <div class="container">
+              <div class="navigation-links">
+                  <div class="nav-item-wrapper" id="all-products-nav-item">
+                      <button class="nav-button">
+                          <span>📦</span>
+                          <span class="nav-text">ALL PRODUCTS</span>
+                      </button>
+                  </div>
+                  <button class="nav-button">
+                      <span>⊞</span>
+                      <span class="nav-text">WINDOWS</span>
+                  </button>
+                  <button class="nav-button">
+                      <span>📊</span>
+                      <span class="nav-text">OFFICE</span>
+                  </button>
+                  <button class="nav-button">
+                      <span>🛡️</span>
+                      <span class="nav-text">ANTIVIRUS</span>
+                  </button>
+                  <button class="nav-button">
+                      <span>🎨</span>
+                      <span class="nav-text">ADOBE</span>
+                  </button>
+                  <button class="nav-button">
+                      <span>💻</span>
+                      <span class="nav-text">DEVELOPMENT</span>
+                  </button>
+                  <button class="nav-button">
+                      <span>⋯</span>
+                      <span class="nav-text">MORE</span>
+                  </button>
+              </div>
+          </div>
 
-  <!-- Pharmacy integration script -->
-  <script src="pharmacy-integration.js"></script>
+          <!-- Mega Menu -->
+          <div class="mega-menu" id="mega-menu">
+              <div class="container">
+                  <div class="mega-menu-flex">
+                      <!-- Left Sidebar - Categories -->
+                      <div class="mega-menu-sidebar">
+                          <div class="mega-menu-sidebar-header">
+                              <span class="mr-2">📦</span>
+                              ALL DEPARTMENTS
+                          </div>
+                          <ul class="mega-menu-category-list" id="mega-menu-category-list">
+                              <!-- Categories will be injected here by JS -->
+                          </ul>
+                      </div>
 
-  <!-- Main App script -->
-  <script src="app.js"></script>
+                      <!-- Right Content - Subcategories -->
+                      <div class="mega-menu-content" id="mega-menu-content">
+                          <!-- Subcategories will be injected here by JS -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+
+      <!-- Hero Banner Section (Carousel) -->
+      <section class="hero-banner">
+          <div class="carousel-container">
+              <div class="carousel-track" id="carousel-track">
+                  <img src="public/images/hero-banner-full.png" alt="Every Solution At One Place" class="carousel-slide" />
+                  <img src="public/images/hero-banner-2.png" alt="Govt Verified Software" class="carousel-slide" />
+                  <img src="public/images/hero-banner-3.png" alt="Microsoft Office Collections" class="carousel-slide" />
+              </div>
+          </div>
+          <div class="carousel-dots" id="carousel-dots">
+              <!-- Dots will be injected by JS -->
+          </div>
+      </section>
+
+      <!-- Main Content -->
+    
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <div class="logo-container mb-4">
+                            <div class="logo-gradient px-3 py-1 rounded">Tech Solutions</div>
+                            <span class="logo-bd px-1 py-0-5 rounded">BD</span>
+                        </div>
+                        <p class="footer-text">
+                            Your trusted partner for genuine software solutions and digital licenses in Bangladesh.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">About Us</a></li>
+                            <li><a href="#" class="footer-link">Contact</a></li>
+                            <li><a href="#" class="footer-link">Support</a></li>
+                            <li><a href="#" class="footer-link">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer-heading">Categories</h3>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">Windows Licenses</a></li>
+                            <li><a href="#" class="footer-link">Office Suite</a></li>
+                            <li><a href="#" class="footer-link">Server Solutions</a></li>
+                            <li><a href="#" class="footer-link">Development Tools</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer-heading">Contact Info</h3>
+                        <div class="footer-contact-info">
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="phone" class="icon-sm"></i>
+                                <span>+880 9697399879</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="mail" class="icon-sm"></i>
+                                <span>info@techsolutionsbd.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom-bar">
+                    <p>&copy; 2025 Tech Solutions BD. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>*\
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons after the DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
-
-</div>
-
-<!-- Load libraries -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script src="pharmacy-integration.js"></script>
-
-
-<!-- Load our app -->
-<script src="app.js"></script>
-</body>
-</html>
-
